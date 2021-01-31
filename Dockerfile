@@ -1,8 +1,8 @@
 FROM node:10 as builder
 ADD . /app
 WORKDIR /app
-RUN npm install -g node-gyp
-RUN npm install --unsafe
+RUN npm i -g node-gyp webpack webpack-cli
+RUN npm i --unsafe
 
 FROM node:10-alpine
 
