@@ -17,6 +17,10 @@ COPY --chown=node . /app
 COPY --chown=node --from=builder /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
 COPY --chown=node --from=builder /app/node_modules /app/node_modules/
 
+RUN npm i -g node-gyp webpack webpack-cli
+
+RUN node post_install.js
+
 USER node
 ENV NODE_ENV production
 
