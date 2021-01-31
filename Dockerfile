@@ -6,6 +6,8 @@ RUN npm i --unsafe
 
 FROM node:10-alpine
 
+RUN apk add nano
+
 COPY zenbot.sh /usr/local/bin/zenbot
 
 WORKDIR /app
